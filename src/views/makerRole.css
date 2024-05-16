@@ -1,0 +1,189 @@
+
+
+
+.role-component {
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.token-no, .customer-details, .amount-receipt-table, .other-table {
+    /* margin-top: 20px; */
+    /* margin-left: 7%; */
+}
+
+.token-no {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    
+    
+}
+.table-input{
+    width: 70px;
+    border: none;
+}
+.input-table-row td{
+/* padding: 0 !important; */
+}
+.input-container{
+    display: flex;
+    justify-content: space-around;
+}
+.input-container input {
+    width: 80%;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+.input-container input::placeholder{
+    font-size: 10px;
+}
+.input-container label {
+/* font-size: 12px; */
+
+}
+.input-container div{
+width: 20%;
+
+}
+.token-no input {
+    margin-left: 10px;
+}
+
+.customer-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.customer-type input{
+    margin-bottom: 20px;
+    
+}
+
+.customer-type p {
+    margin-right: 20px;
+}
+
+.customer-type label {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.crn-account {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.amount-receipt-table table, .other-table table {
+    width: 100%;
+    /* margin-top: 50px; */
+    /* border-collapse: collapse; */
+}
+
+.amount-receipt-table th, .amount-receipt-table td, .other-table th, .other-table td {
+    border: 1px solid #ccc;
+    /* padding: 8px; */
+    text-align: center;
+}
+
+.first-child{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+.note{
+    color: white;
+    border: 1px solid gray;
+    padding: 5px;
+    width: 300px;
+    background-color: #9fbaf7;
+    border: none;
+    border-radius: 2px;
+    font-weight: 700;
+
+}
+.input-div{
+    margin: 10px;
+    padding: 10px;
+}
+.th-background-colour{
+    background-color: #3E74F7;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: white !important;
+    
+}
+.overTableHead th{
+    background-color:  #3E74F7 ;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+.tbody tr td{
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+.second-child {
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+  }
+  
+  .input-div {
+    margin-bottom: 10px;
+  }
+  
+  .input-div label {
+    margin-bottom: 5px;
+  }
+  .entry-btn{
+  display: flex;
+  justify-content: end;
+  }
+  .save-tally{
+    background-color: #3E74F7;
+    color: white;
+    max-width: 300px;
+    max-height: 80px;
+    border-radius:10px ;
+    margin-top: 10px;
+    position: relative;
+    padding: 10px;
+    left: 87.5%;
+    border: none;
+  }
+
+
+  
+  .label-inputs{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .input-submit-button{
+    background-color: rgb(8, 8, 74) ;
+    color: white;
+    width: 200px;
+    height: 35px;
+    border-radius:10px ;
+    margin-top: 20px;
+  
+    padding: 5px;
+    
+
+  }
+
+  .parent-div-btn {
+    display: flex;
+    justify-content:end;
+
+  }
+
+  .note-container{
+    width: 100%;
+    display: flex;
+    justify-content:end ;
+    padding-right: 20px;
+  }
