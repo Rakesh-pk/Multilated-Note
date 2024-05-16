@@ -79,7 +79,7 @@ const handleNavigate =()=>{
   
        
         <div className="flex-end w-500 entry-btn">
-          <Button onClick={handleNavigate} className="mr-4">Add Entry</Button>
+          <Button onClick={handleNavigate} className="mr-4 bg-light add-entry-btn">Add Entry</Button>
         </div>
         
         <RegisterPage />

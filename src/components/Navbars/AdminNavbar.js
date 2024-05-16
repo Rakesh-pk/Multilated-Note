@@ -73,9 +73,19 @@ function AdminNavbar(props) {
               </NavbarToggler>
             </div>
           
+          
             <div className="nav-content-side d-none d-lg-block">
-              
-            <Nav className="ml-auto " navbar>
+               <div>
+               <Nav className="ml-auto " navbar>
+               <NavItem className="nav-tabs">
+                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <b>Mutilated Notes</b>
+                </NavLink>
+              </NavItem>
+              </Nav>
+               </div>
+               <div className="nav-content">
+               <Nav className="ml-auto " navbar>
               <NavItem className="nav-tabs">
                 <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                   <b>Branch : Mulund West Mumbai</b>
@@ -86,12 +96,10 @@ function AdminNavbar(props) {
                  <b> Branch Code : 6711</b>
                 </NavLink>
               </NavItem>
-              <NavItem  className="nav-tabs">
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                 <b> Mutilated Note Register</b>
-                </NavLink>
-              </NavItem>
+              
             </Nav>
+               </div>
+            
             </div>
              
            

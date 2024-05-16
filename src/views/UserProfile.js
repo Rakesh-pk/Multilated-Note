@@ -159,9 +159,9 @@ function UserProfile() {
                             <tr>
                               <th
                                 colSpan="1"
-                                className="th-background-colour"
+                                className="th-background-colour "
                               ></th>
-                              <th colSpan="9" className="th-background-colour">
+                              <th colSpan="9" className="th-background-colour text-center">
                                 Notes
                               </th>
                               <th
@@ -176,15 +176,15 @@ function UserProfile() {
                               <th className="th-background-colour">
                                 Denomination
                               </th>
-                              <th className="th-background-colour">500</th>
-                              <th className="th-background-colour">200</th>
-                              <th className="th-background-colour">100</th>
-                              <th className="th-background-colour">50</th>
-                              <th className="th-background-colour">20</th>
-                              <th className="th-background-colour">10</th>
-                              <th className="th-background-colour">5</th>
-                              <th className="th-background-colour">2</th>
-                              <th className="th-background-colour">1</th>
+                              <th className="th-background-colour text-center">500</th>
+                              <th className="th-background-colour text-center">200</th>
+                              <th className="th-background-colour text-center">100</th>
+                              <th className="th-background-colour text-center">50</th>
+                              <th className="th-background-colour text-center">20</th>
+                              <th className="th-background-colour text-center">10</th>
+                              <th className="th-background-colour text-center">5</th>
+                              <th className="th-background-colour text-center">2</th>
+                              <th className="th-background-colour text-center">1</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -299,31 +299,31 @@ function UserProfile() {
                       <table className="data-table table-bordered ml-3 table-blue-border">
                         <thead>
                           <tr className="overTableHead">
-                            <th colSpan="1">Denomination</th>
-                            <th colSpan="9">Notes</th>
-                            <th colSpan="1" rowSpan="2">
+                            <th colSpan="1" >Denomination</th>
+                            <th colSpan="9" className="text-center">Notes</th>
+                            <th colSpan="1" rowSpan="2" className="text-center">
                               Total Number of pieces
                             </th>
-                            <th colSpan="1" rowSpan="2">
+                            <th colSpan="1" rowSpan="2" className="text-center">
                               Total Value
                             </th>
                           </tr>
                           <tr className="overTableHead">
                             <th></th>
-                            <th>500</th>
-                            <th>200</th>
-                            <th>100</th>
-                            <th>50</th>
-                            <th>20</th>
-                            <th>10</th>
-                            <th>5</th>
-                            <th>2</th>
-                            <th>1</th>
+                            <th className="text-center">500</th>
+                            <th className="text-center">200</th>
+                            <th className="text-center">100</th>
+                            <th className="text-center">50</th>
+                            <th className="text-center">20</th>
+                            <th className="text-center">10</th>
+                            <th className="text-center">5</th>
+                            <th className="text-center">2</th>
+                            <th className="text-center">1</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr className="input-table-row">
-                            <td>full value</td>
+                            <td className="text-center font-weight-bolder">full value</td>
                             <td>
                               <input
                                 type="number"
@@ -417,7 +417,7 @@ function UserProfile() {
                             <td>{fullValue}</td>
                           </tr>
                           <tr className="input-table-row">
-                            <td>half value</td>
+                            <td className="text-center font-weight-bolder">half value</td>
                             <td>
                               <input
                                 type="number"
@@ -503,7 +503,7 @@ function UserProfile() {
                             <td>{totalValue}</td>
                           </tr>
                           <tr className="input-table-row">
-                            <td>Rejcted</td>
+                            <td className="text-center font-weight-bolder">Rejected</td>
                             <td>
                               <input type="number" className="table-input" />
                             </td>
@@ -668,7 +668,7 @@ function UserProfile() {
                 </Form>
               </CardBody>
               <CardFooter className="mt-n4 save-tally">
-                <Button className="btn-fill" color="primary" type="submit">
+                <Button className="submit-btn" type="submit">
                   Submit
                 </Button>
               </CardFooter>

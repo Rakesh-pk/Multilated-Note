@@ -98,7 +98,7 @@ width: 20%;
     border: 1px solid gray;
     padding: 5px;
     width: 300px;
-    background-color: #9fbaf7;
+    background-color: #f09595;
     border: none;
     border-radius: 2px;
     font-weight: 700;
@@ -148,10 +148,11 @@ width: 20%;
     max-width: 300px;
     max-height: 80px;
     border-radius:10px ;
-    margin-top: 10px;
+    /* margin-top: 12px; */
     position: relative;
     padding: 10px;
-    left: 87.5%;
+    left: 81.5%;
+    top: 2%;
     border: none;
   }
 
@@ -186,4 +187,18 @@ width: 20%;
     display: flex;
     justify-content:end ;
     padding-right: 20px;
+  }
+
+  .nav-content{
+    /* display: flex;
+    justify-content: center; */
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+   
+
+  }
+  .submit-btn{
+    background-image: linear-gradient(to bottom left,  #3E74F7, #3E74F7,  #3E74F7) !important;
+  
   }
