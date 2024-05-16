@@ -53,13 +53,13 @@ function NoteRegister() {
                 <h4 className="title">Note Register</h4>
               </CardHeader>
               <CardBody className="ml-n5">
-                <div className="role-component container">
+                <div className="role-component container align-class">
                   <Form>
                     <Row>
                       <Col className="pr-md-1" md="2">
                         <p>Customer Type</p>
                       </Col>
-                      <Col className="pr-md-1" md="2">
+                      <Col className="pr-md-1" md="3">
                         <FormGroup>
                           <label>
                             <input
@@ -101,7 +101,7 @@ function NoteRegister() {
                             <Input placeholder="Contact Number" type="text" />
                           </FormGroup>
                         </Col>
-                        <Col className="pl-md-1" md="4">
+                        <Col className="pl-md-1" md="3">
                           <FormGroup>
                             <label>Customer Address</label>
                             <Input placeholder="Customer Address" type="text" />

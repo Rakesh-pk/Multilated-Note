@@ -7,8 +7,8 @@
 }
 
 .token-no, .customer-details, .amount-receipt-table, .other-table {
-    /* margin-top: 20px; */
-    /* margin-left: 7%; */
+    margin-top: 20px;
+    margin-right: 5%;
 }
 
 .token-no {
@@ -151,8 +151,8 @@ width: 20%;
     /* margin-top: 12px; */
     position: relative;
     padding: 10px;
-    left: 81.5%;
-    top: 2%;
+    left: 75.5%;
+    /* top: 2%; */
     border: none;
   }
 
@@ -201,4 +201,9 @@ width: 20%;
   .submit-btn{
     background-image: linear-gradient(to bottom left,  #3E74F7, #3E74F7,  #3E74F7) !important;
   
+  }
+
+  .align-class{
+    position: relative;
+    left: 50px;
   }

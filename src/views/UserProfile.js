@@ -30,9 +30,7 @@ function UserProfile() {
     2: 0,
     1: 0
   });
-  const scrollToMakeRole =()=>{
-    makerRoleRef.current.scrollIntoView({behaiour:"smooth"})
-  }
+ 
   const [amounts, setAmounts] = useState({
     500: 0,
     200: 0,
