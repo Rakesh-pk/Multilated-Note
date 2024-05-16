@@ -23,12 +23,11 @@ import Rtl from "views/Rtl.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
 import UserProfile from "views/UserProfile.js";
-import MakerRole2 from "views/makerRole2";
 import NoteRegister from "views/NoteRegister";
 
 var routes = [
   {
-    path: "/dashboard",
+    path: "/Mutilated-notes",
     name: "Mutilated Notes",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
@@ -36,7 +35,7 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/tally",
+    path: "/Note-register",
     name: "Note Register",
     rtlName: "الرموز",
     icon: "tim-icons icon-atom",
@@ -44,7 +43,7 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/userprofile",
+    path: "/Evaluation",
     name: "Evaluation",
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",

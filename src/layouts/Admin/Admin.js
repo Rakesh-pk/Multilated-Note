@@ -30,7 +30,6 @@ import routes from "routes.js";
 
 import logo from "assets/img/klogo.png";
 import { BackgroundColorContext } from "contexts/BackgroundColorContext";
-import MakerRole from "views/makeRole";
 
 var ps;
 

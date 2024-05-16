@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate ,useLocation} from "react-router-dom";
 import {
   Button,
   Card,
@@ -15,6 +16,8 @@ import {
 function NoteRegister() {
   const navigate = useNavigate();
   const [totalAmount, setTotalAmount] = useState(0);
+  const location = useLocation();
+  const endpoint = location.pathname;
   const [amounts, setAmounts] = useState({
     500: 0,
     200: 0,
@@ -40,7 +43,7 @@ function NoteRegister() {
   };
 
   const handleSaveTally = () => {
-    navigate("/tally");
+    navigate("/admin/Mutilated-notes");
   };
 
   return (
@@ -50,7 +53,7 @@ function NoteRegister() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <h4 className="title">Note Register</h4>
+               {endpoint=='/admin/Note-register'? (<h4 className="title">Note Register</h4>):(<h4 className="title">Customer Receipt</h4>)}
               </CardHeader>
               <CardBody className="ml-n5">
                 <div className="role-component container align-class">
@@ -257,9 +260,9 @@ function NoteRegister() {
                           </tr>
                         </tbody>
                       </table>
-                      <Button className="save-tally" onClick={handleSaveTally}>
+                     {endpoint==='/admin/Note-register'&&<button className="save-tally ml-5 mt-4" onClick={handleSaveTally}>
                         Save for final tally
-                      </Button>
+                      </button>}
                     </div>
                   </Form>
                 </div>

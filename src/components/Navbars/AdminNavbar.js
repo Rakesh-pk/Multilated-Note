@@ -2,6 +2,7 @@
 import React from "react";
 import classNames from "classnames";
 import '../../assets/css/adminNavBar.css'
+import { useLocation } from "react-router-dom";
 import {
   Button,
   Collapse,
@@ -26,7 +27,8 @@ function AdminNavbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
   const [modalSearch, setmodalSearch] = React.useState(false);
   const [color, setcolor] = React.useState("navbar-transparent");
-  
+  const location = useLocation();
+  const endpoint = location.pathname;
   React.useEffect(() => {
     window.addEventListener("resize", updateColor);
     return function cleanup() {
@@ -79,7 +81,7 @@ function AdminNavbar(props) {
                <Nav className="ml-auto " navbar>
                <NavItem className="nav-tabs">
                 <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <b>Mutilated Notes</b>
+                  <b>{props.brandText}</b>
                 </NavLink>
               </NavItem>
               </Nav>

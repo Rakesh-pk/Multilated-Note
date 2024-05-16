@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import { Line, Bar } from "react-chartjs-2";
+import './makerRole.css'
 import {
   Button,
   ButtonGroup,
@@ -31,8 +32,6 @@ import {
   chartExample4,
 } from "variables/charts.js";
 import RegisterPage from "./ListOfNotes";
-import MakerRole from "./makeRole";
-import MakerRole2 from "./makerRole2";
 
 function Dashboard(props) {
 
@@ -40,7 +39,7 @@ function Dashboard(props) {
 
 const handleNavigate =()=>{
    
-  navigate('/admin/tally')
+  navigate('/admin/Note-register')
 
 }
 
@@ -79,7 +78,7 @@ const handleNavigate =()=>{
   
        
         <div className="flex-end w-500 entry-btn">
-          <Button onClick={handleNavigate} className="mr-4 bg-light add-entry-btn">Add Entry</Button>
+          <button onClick={handleNavigate} className="btn-property mr-3">Add Entry</button>
         </div>
         
         <RegisterPage />

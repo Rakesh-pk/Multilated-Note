@@ -15,6 +15,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import NoteRegister from "./NoteRegister";
 
 function UserProfile() {
   const [totalValue, setTotalValue] = useState(0);
@@ -66,223 +67,7 @@ function UserProfile() {
   return (
     <>
       <div className="content">
-        <Row>
-          <Col md="12">
-            <Card>
-              <CardHeader>
-                <h4 className="title">Customer Receipt</h4>
-              </CardHeader>
-              <CardBody className="mt-n4">
-                <Form>
-                  <Row>
-                    <Col className="pr-md-1" md="2">
-                      <p>Customer Type</p>
-                    </Col>
-                    <Col className="pr-md-1" md="2">
-                      <FormGroup>
-                        <label>
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="kotak"
-                          />
-                          Kotak Bank Account Holder
-                        </label>
-                      </FormGroup>
-                    </Col>
-                    <Col className="pr-md-1" md="2">
-                      <FormGroup>
-                        <label>
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="walkin"
-                          />
-                          Walk-in Customer
-                        </label>
-                      </FormGroup>
-                    </Col>
-                    {/* <Col className="pr-md-1" md="3">
-                    <div className="note mb-3">
-            Note: Differential amount ( Receipt - Payment ) of Rs 1000 is
-            credited in the GL
-          </div>
-                      </Col> */}
-                  </Row>
-
-                  <Row>
-                    <Col className="pr-md-1" md="2">
-                      <FormGroup>
-                        <label>CRN</label>
-                        <Input placeholder="CRN" type="text" />
-                      </FormGroup>
-                    </Col>
-                    <Col className="px-md-1" md="2">
-                      <FormGroup>
-                        <label>Account Number</label>
-                        <Input placeholder="Account Number" type="text" />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="2">
-                      <FormGroup>
-                        <label htmlFor="exampleInputEmail1">
-                          Customer Name
-                        </label>
-                        <Input placeholder="Customer Name" type="text" />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="2">
-                      <FormGroup>
-                        <label htmlFor="exampleInputEmail1">
-                          Contact Number
-                        </label>
-                        <Input placeholder="Contact Number" type="text" />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-md-1" md="2">
-                      <FormGroup>
-                        <label htmlFor="exampleInputEmail1">
-                          Customer Address
-                        </label>
-                        <Input placeholder="Customer Address" type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col lassName="pl-md-1" md="12">
-                      <div className="table-container">
-                        <table className="data-table table-bordered table-blue-border">
-                          <thead>
-                            <tr>
-                              <th
-                                colSpan="1"
-                                className="th-background-colour "
-                              ></th>
-                              <th colSpan="9" className="th-background-colour text-center">
-                                Notes
-                              </th>
-                              <th
-                                colSpan="2"
-                                className="th-background-colour"
-                                rowSpan="2"
-                              >
-                                Total Amount
-                              </th>
-                            </tr>
-                            <tr>
-                              <th className="th-background-colour">
-                                Denomination
-                              </th>
-                              <th className="th-background-colour text-center">500</th>
-                              <th className="th-background-colour text-center">200</th>
-                              <th className="th-background-colour text-center">100</th>
-                              <th className="th-background-colour text-center">50</th>
-                              <th className="th-background-colour text-center">20</th>
-                              <th className="th-background-colour text-center">10</th>
-                              <th className="th-background-colour text-center">5</th>
-                              <th className="th-background-colour text-center">2</th>
-                              <th className="th-background-colour text-center">1</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr className="input-table-row">
-                              <td>Count</td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 500)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 200)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 100)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 50)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 20)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 10)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 5)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 2)
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="number"
-                                  className="table-input"
-                                  onChange={(e) =>
-                                    handleInputChange(e.target.value, 1)
-                                  }
-                                />
-                              </td>
-                              <td>100</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </Col>
-                  </Row>
-                </Form>
-              </CardBody>
-
-              {/* </Col> */}
-            </Card>
-          </Col>
-        </Row>
+        <NoteRegister/>
         {/* 2nd //////////////////////// */}
         <Row>
           <Col md="12">
@@ -600,21 +385,16 @@ function UserProfile() {
                         </label>
                       </FormGroup>
                     </Col>
-                    {/* <Col className="pr-md-1" md="3">
-                    <div className="note mb-3">
-            Note: Differential amount ( Receipt - Payment ) of Rs 1000 is
-            credited in the GL
-          </div>
-                      </Col> */}
+                    
                   </Row>
                   <Row>
-                    <Col className="pr-md-1" md="2">
+                    <Col className="pr-md-1" md="3">
                       <FormGroup>
                         <label>Customer Name</label>
                         <Input placeholder="Customer Name" type="text" />
                       </FormGroup>
                     </Col>
-                    <Col className="px-md-1" md="2">
+                    <Col className="px-md-1" md="3">
                       <FormGroup>
                         <label>Operational/Unusual Event Id</label>
                         <Input placeholder="Operational" type="text" />
@@ -644,19 +424,19 @@ function UserProfile() {
               <CardBody>
                 <Form>
                   <Row>
-                    <Col className="pr-md-1" md="3">
+                    <Col className="pr-md-4" md="4">
                       <FormGroup>
                         <label>Employee Id</label>
                         <Input placeholder="Employee Id" type="text" />
                       </FormGroup>
                     </Col>
-                    <Col className="px-md-1" md="3">
+                    <Col className="px-md-1" md="4">
                       <FormGroup>
                         <label>Employee Name</label>
                         <Input placeholder="Employee Name" type="text" />
                       </FormGroup>
                     </Col>
-                    <Col className="pl-md-1" md="3">
+                    <Col className="pl-md-1" md="4">
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">HRMS Role</label>
                         <Input placeholder="HRMS Role" type="text" />
@@ -666,7 +446,7 @@ function UserProfile() {
                 </Form>
               </CardBody>
               <CardFooter className="mt-n4 save-tally">
-                <Button className="submit-btn" type="submit">
+                <Button className="submit-btn ml-5" type="submit">
                   Submit
                 </Button>
               </CardFooter>

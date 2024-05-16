@@ -36,7 +36,7 @@ const RegisterPage = () => {
     // Handle search logic here
   };
   const handleRowClick = () =>{
-    navigate('/admin/userprofile')
+    navigate('/admin/Evaluation')
   }
   return (
     <div className="content">

@@ -141,6 +141,7 @@ width: 20%;
   .entry-btn{
   display: flex;
   justify-content: end;
+ 
   }
   .save-tally{
     background-color: #3E74F7;
@@ -207,3 +208,14 @@ width: 20%;
     position: relative;
     left: 50px;
   }
+
+  .btn-property{
+    background-color: #3E74F7;
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+
