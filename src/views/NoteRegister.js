@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useNavigate ,useLocation} from "react-router-dom";
 import {
@@ -30,6 +30,13 @@ function NoteRegister() {
     1: 0
   });
   const [customerType, setCustomerType] = useState('kotak');
+  const [isReadOnly, setIsReadOnly] = useState(false);
+
+  useEffect(() => {
+    if (endpoint === '/admin/Evaluation') {
+      setIsReadOnly(true);
+    }
+  }, [endpoint]);
 
   const handleInputChange = (value, denomination) => {
     const updatedAmounts = { ...amounts, [denomination]: value };
@@ -70,6 +77,7 @@ function NoteRegister() {
                               name="customerType"
                               value="kotak"
                               onChange={() => setCustomerType("kotak")}
+                              disabled={isReadOnly}
                             />
                             Kotak Bank Account Holder
                           </label>
@@ -83,6 +91,7 @@ function NoteRegister() {
                               name="customerType"
                               value="walkin"
                               onChange={() => setCustomerType("walkin")}
+                              disabled={isReadOnly}
                             />
                             Walk-in Customer
                           </label>
@@ -95,19 +104,19 @@ function NoteRegister() {
                         <Col className="pl-md-1" md="4">
                           <FormGroup>
                             <label>Customer Name</label>
-                            <Input placeholder="Customer Name" type="text" />
+                            <Input placeholder="Customer Name" type="text" disabled={isReadOnly} />
                           </FormGroup>
                         </Col>
                         <Col className="pl-md-1" md="4">
                           <FormGroup>
                             <label>Contact Number</label>
-                            <Input placeholder="Contact Number" type="text" />
+                            <Input placeholder="Contact Number" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                         <Col className="pl-md-1" md="3">
                           <FormGroup>
                             <label>Customer Address</label>
-                            <Input placeholder="Customer Address" type="text" />
+                            <Input placeholder="Customer Address" type="text" disabled={isReadOnly} />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -116,31 +125,31 @@ function NoteRegister() {
                         <Col className="pr-md-1" md="2">
                           <FormGroup>
                             <label>CRN</label>
-                            <Input placeholder="CRN" type="text" />
+                            <Input placeholder="CRN" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                         <Col className="pr-md-1" md="2">
                           <FormGroup>
                             <label>Account Number</label>
-                            <Input placeholder="Account Number" type="text" />
+                            <Input placeholder="Account Number" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                         <Col className="pr-md-1" md="2">
                           <FormGroup>
                             <label>Customer Name</label>
-                            <Input placeholder="Customer Name" type="text" />
+                            <Input placeholder="Customer Name" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                         <Col className="pr-md-1" md="2">
                           <FormGroup>
                             <label>Contact Number</label>
-                            <Input placeholder="Contact Number" type="text" />
+                            <Input placeholder="Contact Number" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                         <Col className="pr-md-1" md="2">
                           <FormGroup>
                             <label>Customer Address</label>
-                            <Input placeholder="Customer Address" type="text" />
+                            <Input placeholder="Customer Address" type="text" disabled={isReadOnly}/>
                           </FormGroup>
                         </Col>
                       </Row>
@@ -182,6 +191,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 500)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -191,6 +201,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 200)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -200,6 +211,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 100)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -209,6 +221,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 50)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -218,6 +231,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 20)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -227,6 +241,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 10)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -236,6 +251,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 5)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -245,6 +261,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 2)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>
@@ -254,6 +271,7 @@ function NoteRegister() {
                                 onChange={(e) =>
                                   handleInputChange(e.target.value, 1)
                                 }
+                                disabled={isReadOnly}
                               />
                             </td>
                             <td>{totalAmount}</td>

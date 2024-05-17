@@ -17381,7 +17381,8 @@ hr {
 }
 .main-panel > .content {
   padding: 78px 30px 30px 280px;
-  min-height: calc(100vh - 70px);
+  /* min-height: calc(100vh - 70px); */
+  height: 100%;
 }
 .main-panel > .navbar {
   margin-bottom: 0;

@@ -27,7 +27,7 @@ function FinalSubmit() {
   return (
     <>
       <div className="content">
-       <UserProfile/>
+       {/* <UserProfile/> */}
        {/* final submit PArt */}
        <Row>
         <Col md="12">
@@ -41,7 +41,7 @@ function FinalSubmit() {
                   {/* <Col className="pr-md-1" md="2">
                     <p>Customer Type</p>
                   </Col> */}
-                  <Col className="pr-md-1" md="1">
+                  <Col className="pr-md-1" md="2">
                     <FormGroup>
                       <label>
                         <input

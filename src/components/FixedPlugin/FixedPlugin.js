@@ -15,7 +15,7 @@ function FixedPlugin(props) {
     <div className="">
       <Dropdown isOpen={dropDownIsOpen} toggle={handleClick}>
         <DropdownToggle tag="div">
-          <i className="fa fa-cog fa-2x" />
+          <i className="" />
         </DropdownToggle>
         <ul className="dropdown-menu show">
           <li className="header-title">SIDEBAR BACKGROUND</li>
