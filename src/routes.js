@@ -24,6 +24,7 @@ import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
 import UserProfile from "views/UserProfile.js";
 import NoteRegister from "views/NoteRegister";
+import FinalSubmit from "views/FinalSubmit";
 
 var routes = [
   {
@@ -48,6 +49,14 @@ var routes = [
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",
     component: <UserProfile/>,
+    layout: "/admin"
+  },
+  {
+    path: "/review",
+    name: "Review",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-pin",
+    component: <FinalSubmit/>,
     layout: "/admin",
   },
  

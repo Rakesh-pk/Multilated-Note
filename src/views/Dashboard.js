@@ -50,7 +50,9 @@ const handleNavigate =()=>{
         <Row>
           <Col md="12">
             <Card>
-            <h4 className="p-2">Pending Requests</h4>
+            <CardHeader>
+                <h4 className="title">Pending Requests</h4>
+              </CardHeader>
         <Table className="ml-3" bordered style={{ width: "97%" }}>
         <tbody>
             <tr>
@@ -78,9 +80,14 @@ const handleNavigate =()=>{
   
        
         <div className="flex-end w-500 entry-btn">
-          <button onClick={handleNavigate} className="btn-property mr-3">Add Entry</button>
+          <button onClick={handleNavigate} className="btn-property mr-4 mb-3">Add Entry</button>
         </div>
-        
+        </Card>
+     </Col>
+     </Row>
+        <Row>
+          <Col md="12">
+            <Card>
         <RegisterPage />
         <br />
         </Card>

@@ -102,26 +102,26 @@ function Sidebar(props) {
               </div>
             ) : null}
             <Nav>
-              {routes.map((prop, key) => {
-                if (prop.redirect) return null;
-                return (
-                  <li
+                {/* {routes.map((prop, key) => { */}
+                {/* if (prop.redirect) return null; */}
+                {/* return ( */}
+                <li
                     className={
-                      activeRoute(prop.path) + (prop.pro ? " active-pro" : "")
+                      activeRoute(routes[0].path) + (routes[0].pro ? " active-pro" : "")
                     }
-                    key={key}
+                    
                   >
                     <NavLink
-                      to={prop.layout + prop.path}
+                      to={routes[0].layout + routes[0].path}
                       className="nav-link"
                       onClick={props.toggleSidebar}
                     >
-                      <i className={prop.icon} />
-                      <p>{rtlActive ? prop.rtlName : prop.name}</p>
+                      <i className={routes[0].icon} />
+                      <p>{rtlActive ? routes[0].rtlName : routes[0].name}</p>
                     </NavLink>
                   </li>
-                );
-              })}
+                {/* ); */}
+              {/* // })} */}
             </Nav>
           </div>
         </div>

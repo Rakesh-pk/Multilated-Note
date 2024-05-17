@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from "react";
-
+import { useNavigate , useLocation} from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -19,6 +19,9 @@ import {
 import NoteRegister from "./NoteRegister";
 
 function UserProfile() {
+  const location = useLocation();
+  const endpoint = location.pathname;
+  const navigate = useNavigate()
   const [totalValue, setTotalValue] = useState(0);
   const [fullValue,setFullValue]= useState(0)
   const [fullAmount, setFullAmount] = useState({
@@ -70,10 +73,11 @@ function UserProfile() {
       total += updatedAmounts[denom] * parseInt(denom);
     });
     setFullValue(total);
-
-
-
     
+  }
+  const handleEvaluatonSubmit = (e) =>{
+    e.preventDefault()
+    navigate('/admin/review')
   }
   return (
     <>
@@ -117,7 +121,7 @@ function UserProfile() {
                         </thead>
                         <tbody>
                           <tr className="input-table-row">
-                            <td className="text-center ">full Value</td>
+                            <td className="text-center ">Full Value</td>
                             <td>
                               <input
                                 type="number"
@@ -211,7 +215,7 @@ function UserProfile() {
                             <td>{fullValue}</td>
                           </tr>
                           <tr className="input-table-row">
-                            <td className="text-center ">half Value</td>
+                            <td className="text-center ">Half Value</td>
                             <td>
                               <input
                                 type="number"
@@ -473,9 +477,9 @@ function UserProfile() {
                 </Form>
               </CardBody>
               <CardFooter className="mt-n4 save-tally">
-                <Button className="submit-btn ml-5" type="submit">
+              {endpoint === '/admin/Evaluation' &&  <Button className="submit-btn ml-5" type="submit" onClick={handleEvaluatonSubmit}>
                   Submit
-                </Button>
+                </Button> }
               </CardFooter>
             </Card>
           </Col>

@@ -43,7 +43,9 @@ const RegisterPage = () => {
       
     <div className="register-page">
       <div className="header ">
-        <h4>Select Date Range</h4>
+        <CardHeader>
+                <h4 className="title">Select Date Range</h4>
+              </CardHeader>
         <div className="date-range">
           <label htmlFor="fromDate">From Date:</label>
           <input

@@ -56,7 +56,7 @@ function NoteRegister() {
                {endpoint=='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register</h4>):(<h4 className="title">Customer Receipt</h4>)}
               </CardHeader>
               <CardBody className="ml-n5">
-                <div className="role-component container align-class">
+                <div className="role-component  align-class">
                   <Form>
                     <Row>
                       <Col className="pr-md-1" md="2">
