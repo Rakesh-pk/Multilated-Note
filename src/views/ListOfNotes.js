@@ -40,9 +40,7 @@ const RegisterPage = () => {
   }
   return (
     <div className="content">
-        {/* <Row>
-          <Col md="12">
-            <Card> */}
+      
     <div className="register-page">
       <div className="header ">
         <h4>Select Date Range</h4>

@@ -78,8 +78,8 @@ function AdminNavbar(props) {
           
             <div className="nav-content-side d-none d-lg-block">
                <div>
-               <Nav className="ml-auto " navbar>
-               <NavItem className="nav-tabs">
+               <Nav className="ml-4 " navbar>
+               <NavItem >
                 <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                   <b>{props.brandText}</b>
                 </NavLink>

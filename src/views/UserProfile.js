@@ -14,6 +14,7 @@ import {
   Input,
   Row,
   Col,
+  Label,
 } from "reactstrap";
 import NoteRegister from "./NoteRegister";
 
@@ -43,6 +44,12 @@ function UserProfile() {
     2: 0,
     1: 0
   });
+
+  const [paymentMethod, setPaymentMethod] = useState("cash");
+
+  const handlePaymentMethodChange = (e) => {
+    setPaymentMethod(e.target.value);
+  };
   const handleInputChange = (value, denomination) => {
     const updatedAmounts = { ...amounts, [denomination]: value };
     setAmounts(updatedAmounts);
@@ -63,6 +70,10 @@ function UserProfile() {
       total += updatedAmounts[denom] * parseInt(denom);
     });
     setFullValue(total);
+
+
+
+    
   }
   return (
     <>
@@ -106,7 +117,7 @@ function UserProfile() {
                         </thead>
                         <tbody>
                           <tr className="input-table-row">
-                            <td className="text-center font-weight-bolder">full value</td>
+                            <td className="text-center ">full Value</td>
                             <td>
                               <input
                                 type="number"
@@ -200,7 +211,7 @@ function UserProfile() {
                             <td>{fullValue}</td>
                           </tr>
                           <tr className="input-table-row">
-                            <td className="text-center font-weight-bolder">half value</td>
+                            <td className="text-center ">half Value</td>
                             <td>
                               <input
                                 type="number"
@@ -286,7 +297,7 @@ function UserProfile() {
                             <td>{totalValue}</td>
                           </tr>
                           <tr className="input-table-row">
-                            <td className="text-center font-weight-bolder">Rejected</td>
+                            <td className="text-center ">Rejected</td>
                             <td>
                               <input type="number" className="table-input" />
                             </td>
@@ -350,70 +361,86 @@ function UserProfile() {
         </Row>
         {/* 3//////////////////////////////// */}
         <Row>
-          <Col md="12">
-            <Card>
-              <CardHeader>
-                <h4 className="title">Payment</h4>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <Row>
-                    <Col className="pr-md-1" md="2">
-                      <p>Payment Done via:</p>
-                    </Col>
-                    <Col className="pr-md-1" md="2">
-                      <FormGroup>
-                        <label>
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="kotak"
-                          />
-                          Cash
-                        </label>
-                      </FormGroup>
-                    </Col>
-                    <Col className="pr-md-1" md="2">
-                      <FormGroup>
-                        <label>
-                          <input
-                            type="radio"
-                            name="customerType"
-                            value="walkin"
-                          />
-                          Customer Account
-                        </label>
-                      </FormGroup>
-                    </Col>
-                    
-                  </Row>
-                  <Row>
-                    <Col className="pr-md-1" md="3">
-                      <FormGroup>
-                        <label>Customer Name</label>
-                        <Input placeholder="Customer Name" type="text" />
-                      </FormGroup>
-                    </Col>
-                    <Col className="px-md-1" md="3">
-                      <FormGroup>
-                        <label>Operational/Unusual Event Id</label>
-                        <Input placeholder="Operational" type="text" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-md-1" md="5">
-                      <FormGroup>
-                        <label>Remarks</label>
-                        <Input placeholder="Remarks" type="textarea" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                </Form>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+      <Col md="12">
+        <Card>
+          <CardHeader>
+            <h4 className="title">Payment</h4>
+          </CardHeader>
+          <CardBody>
+            <Form>
+              <Row className="mb-2">
+                <Col md="3">
+                  <p>Payment Done via:</p>
+                </Col>
+                <Col md="2">
+                  <FormGroup>
+                    <Label>
+                      <Input
+                        type="radio"
+                        name="paymentMethod"
+                        value="cash"
+                        checked={paymentMethod === "cash"}
+                        onChange={handlePaymentMethodChange}
+                      />
+                      Cash
+                    </Label>
+                  </FormGroup>
+                </Col>
+                <Col md="2">
+                  <FormGroup>
+                    <Label>
+                      <Input
+                        type="radio"
+                        name="paymentMethod"
+                        value="customerAccount"
+                        checked={paymentMethod === "customerAccount"}
+                        onChange={handlePaymentMethodChange}
+                      />
+                      Customer Account
+                    </Label>
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row className="mb-3">
+                <Col md="3">
+                  <FormGroup>
+                    <Label>Customer Name</Label>
+                    <Input placeholder="Customer Name" type="text" />
+                  </FormGroup>
+                </Col>
+                
+                {paymentMethod === "customerAccount" && (
+                  <Col md="3">
+                    <FormGroup>
+                      <Label>Account Number</Label>
+                      <Input placeholder="Account Number" type="text" />
+                    </FormGroup>
+                  </Col>
+                )}
+              </Row>
+              { (
+                <Row className="mb-3">
+                  <Col md="3">
+                    <FormGroup>
+                      <Label>Operational/Unusual Event Id</Label>
+                      <Input placeholder="Operational" type="text" />
+                    </FormGroup>
+                  </Col>
+                </Row>
+              )}
+              <Row className="mb-3">
+                <Col md="5">
+                  <FormGroup>
+                    <Label>Remarks</Label>
+                    <Input placeholder="Remarks" type="textarea" />
+                  </FormGroup>
+                </Col>
+              </Row>
+            </Form>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
         {/* 4rd */}
         <Row>
           <Col md="12">

@@ -97,7 +97,7 @@ width: 20%;
     color: white;
     border: 1px solid gray;
     padding: 5px;
-    width: 300px;
+    width: 600px;
     background-color: #f09595;
     border: none;
     border-radius: 2px;
@@ -110,8 +110,8 @@ width: 20%;
 }
 .th-background-colour{
     background-color: #3E74F7;
-    font-size: 0.9rem;
-    font-weight: 800;
+    /* font-size: 0.9rem; */
+    font-weight: 500;
     color: white !important;
     
 }
@@ -119,11 +119,11 @@ width: 20%;
     background-color:  #3E74F7 ;
     color: white;
     font-size: 0.9rem;
-    font-weight: 800;
+    font-weight: 500;
 }
 .tbody tr td{
     font-size: 0.9rem;
-    font-weight: 800;
+    font-weight: 500;
 }
 .second-child {
     /* display: flex;

@@ -53,7 +53,7 @@ function NoteRegister() {
           <Col md="12">
             <Card>
               <CardHeader>
-               {endpoint=='/admin/Note-register'? (<h4 className="title">Note Register</h4>):(<h4 className="title">Customer Receipt</h4>)}
+               {endpoint=='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register</h4>):(<h4 className="title">Customer Receipt</h4>)}
               </CardHeader>
               <CardBody className="ml-n5">
                 <div className="role-component container align-class">
@@ -147,7 +147,7 @@ function NoteRegister() {
                     ) : null}
 
                     <div className="amount-receipt-table">
-                      <h3>Amount Receipt from Customer</h3>
+                      <h3 className="amount-heading">Amount Receipt from Customer</h3>
                       <table>
                         <thead>
                           <tr>
