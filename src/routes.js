@@ -27,6 +27,7 @@ import NoteRegister from "views/NoteRegister";
 import FinalSubmit from "views/FinalSubmit";
 import CouterFeitNoteRegister from "views/CouterFeitNoteRegister";
 import CounterFeitNoteDashBoard from "views/CounterFeitNoteDashBoard";
+import FirReportingRegister from "views/FirReportingRegister";
 import NotificationList from "views/NotificationList";
 
 var routes = [
@@ -85,6 +86,14 @@ var routes = [
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",
     component: <CouterFeitNoteRegister/>,
+    layout: "/admin",
+  },
+  {
+    path: "/counter-feit-fir-report-register",
+    name: "Fir Report Register",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-pin",
+    component: <FirReportingRegister/>,
     layout: "/admin",
   },
   

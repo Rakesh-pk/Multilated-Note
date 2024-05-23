@@ -125,6 +125,16 @@ function Sidebar(props) {
                   <p>{rtlActive ? routes[4].rtlName : routes[4].name}</p>
                 </NavLink>
               </li>
+              <li className={ activeRoute(routes[7].path) +(routes[7].pro ? " active-pro" : "") } >
+                <NavLink
+                  to={routes[7].layout + routes[7].path}
+                  className="nav-link"
+                  onClick={props.toggleSidebar}
+                >
+                  <i className={routes[7].icon} />
+                  <p>{rtlActive ? routes[7].rtlName : routes[7].name}</p>
+                </NavLink>
+              </li>
               {/* ); */}
               {/* // })} */}
             </Nav>
