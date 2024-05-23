@@ -1,19 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./registerPage.css"
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardText,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col,
-} from "reactstrap";
+import "./registerPage.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [fromDate, setFromDate] = useState("");
@@ -35,92 +24,106 @@ const RegisterPage = () => {
   const handleSearch = () => {
     // Handle search logic here
   };
-  const handleRowClick = () =>{
-    navigate('/admin/Evaluation')
-  }
-  const handleNavigate =()=>{
-   
-    navigate('/admin/Note-register')
   
-  }
+  const handleRowClick = () => {
+    navigate('/admin/Evaluation');
+  };
+  
+  const handleNavigate = () => {
+    navigate('/admin/Note-register');
+  };
+
   return (
     <div className="content">
-      
-    <div className="register-page">
-      <div className="header ">
-        <CardHeader>
-                <h4 className="title">Select Date Range</h4>
-              </CardHeader>
-        <div className="date-range">
-          <label htmlFor="fromDate">From Date:</label>
-          <input
-            type="date"
-            id="fromDate"
-            value={fromDate}
-            onChange={handleFromDateChange}
-          />
-          <label htmlFor="toDate">To Date:</label>
-          <input
-            type="date"
-            id="toDate"
-            value={toDate}
-            onChange={handleToDateChange}
-          />
-       
-          <label htmlFor="status">Status:</label>
-          <select id="status" value={status} onChange={handleStatusChange}>
-            <option value="">Select Status</option>
-            <option value="Pending">Pending</option>
-            <option value="Approved">Approved</option>
-            <option value="Rejected">Rejected</option>
-          </select>
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-        <button className="search-button" onClick={handleNavigate}>
-          Add Entry
-        </button>
+      <div className="register-page">
+        <div className="header">
+          <div className="card">
+            <div className="card-header">
+              <h4 className="title">Select Date Range</h4>
+            </div>
+            <div className="card-body">
+              <div className="date-range">
+                <div className="form-group">
+                  <label htmlFor="fromDate">From Date:</label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="fromDate"
+                    value={fromDate}
+                    onChange={handleFromDateChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="toDate">To Date:</label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="toDate"
+                    value={toDate}
+                    onChange={handleToDateChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="status">Status:</label>
+                  <select
+                    id="status"
+                    className="form-control"
+                    value={status}
+                    onChange={handleStatusChange}
+                  >
+                    <option value="">Select Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                  </select>
+                </div>
+                <button className="btn btn-info mt-4" onClick={handleSearch}>
+                  Search
+                </button>
+                <button className="btn btn-info mt-4" onClick={handleNavigate}>
+                  Add Entry
+                </button>
+              </div>
+              <hr />
+            </div>
+          </div>
         </div>
-        <hr />
+        <div className="table-container mt-4">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Incident Rised</th>
+                <th>Initiated By</th>
+                <th>Initiated By Employee ID</th>
+                <th>Initiated On</th>
+                <th>Raised To</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a className="link-primary" href="#" onClick={handleRowClick}>
+                    M47483
+                  </a>
+                </td>
+                <td>Mutilated Note Exchange Request</td>
+                <td>Manas Sen</td>
+                <td>kmbl187007</td>
+                <td>04-April-2024 11:30 AM</td>
+                <td>Haresh H</td>
+                <td>BOM</td>
+                <td>Approval Pending</td>
+                <td>Exchange Request</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div className="horizontal">
-   
-      </div>
-      <div className="table-container">
-      <table className="data-table table" style={{ fontSize: '0.9rem' }}>
-        <thead>
-          <tr>
-            <th>Request ID</th>
-            <th>Incident Rised</th>
-            <th>Initiated By</th>
-            <th>Initiated By Employee ID</th>
-            <th>Initiated On</th>
-            <th>Raised To</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Remarks</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a class="link-underline-primary" href="#" onClick={handleRowClick}>M47483</a></td>
-            <td>Mutilated Note Exchange Request</td>
-            <td>Manas Sen</td>
-            <td>kmbl187007</td>
-            <td>04-April-2024 11:30 AM</td>
-            <td>Haresh H</td>
-            <td>BOM</td>
-            <td>Approval Pending</td>
-            <td>Exchange Request</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-    </div>
-    {/* </Card>
-          </Col>
-        </Row> */}
-      </div>
   );
 };
 

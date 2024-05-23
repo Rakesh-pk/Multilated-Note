@@ -30,11 +30,11 @@ h1,h2,h3,h4,h5,h6{
 }
 
 a{
-    color: #d6b3a1;
+    color: $info;
     font-weight: $font-weight-light;
     &:hover,
     &:focus{
-        color: $primary;
+        color: red;
     }
 }
 h1, .h1 {

@@ -27,6 +27,7 @@ import NoteRegister from "views/NoteRegister";
 import FinalSubmit from "views/FinalSubmit";
 import CouterFeitNoteRegister from "views/CouterFeitNoteRegister";
 import CounterFeitNoteDashBoard from "views/CounterFeitNoteDashBoard";
+import NotificationList from "views/NotificationList";
 
 var routes = [
   {
@@ -61,6 +62,7 @@ var routes = [
     component: <FinalSubmit/>,
     layout: "/admin",
   },
+ 
   {
     path: "/counter-feit-notes-dashboard",
     name: "Counter Feit Notes",
@@ -68,6 +70,14 @@ var routes = [
     icon: "tim-icons icon-pin",
     component: <CounterFeitNoteDashBoard/>,
     layout: "/admin",
+  },
+  {
+    path: "/notifications",
+    name: "Notifications",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-pin",
+    component: <NotificationList/>,
+    layout: "/admin"
   },
   {
     path: "/counter-feit-notes-register",

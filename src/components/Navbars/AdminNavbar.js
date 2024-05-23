@@ -1,18 +1,17 @@
 // Import statements for the new components
 import React from "react";
 import classNames from "classnames";
-import '../../assets/css/adminNavBar.css';
-import { useLocation } from "react-router-dom";
+import "../../assets/css/adminNavBar.css";
+import { FaBell } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 import {
-  Button,
   Collapse,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
   Input,
-  InputGroup,
-  NavbarBrand,
   Navbar,
   NavLink,
   Nav,
@@ -20,17 +19,16 @@ import {
   Modal,
   NavbarToggler,
   ModalHeader,
-  NavItem
+  NavItem,
 } from "reactstrap";
-import BreadCrumbs from "views/BreadCrumbs";  // Ensure this line is here
 
 function AdminNavbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
   const [modalSearch, setmodalSearch] = React.useState(false);
-  const [color, setcolor] = React.useState("navbar-transparent");
-  const location = useLocation();
-  const endpoint = location.pathname;
-
+  // const [color, setcolor] = React.useState("navbar-transparent");
+  // const location = useLocation();
+  const navigate = useNavigate();
+  // const endpoint = location.pathname;
   React.useEffect(() => {
     window.addEventListener("resize", updateColor);
     return function cleanup() {
@@ -40,17 +38,17 @@ function AdminNavbar(props) {
 
   const updateColor = () => {
     if (window.innerWidth < 993 && collapseOpen) {
-      setcolor("bg-white");
+      // setcolor("bg-white");
     } else {
-      setcolor("navbar-transparent");
+      // setcolor("navbar-transparent");
     }
   };
 
   const toggleCollapse = () => {
     if (collapseOpen) {
-      setcolor("navbar-transparent");
+      // setcolor("navbar-transparent");
     } else {
-      setcolor("bg-white");
+      // setcolor("bg-white");
     }
     setcollapseOpen(!collapseOpen);
   };
@@ -61,7 +59,7 @@ function AdminNavbar(props) {
 
   return (
     <div className="">
-      <Navbar className={classNames("","fixed-top", )} expand="lg">
+      <Navbar className={classNames("", "fixed-top")} expand="lg">
         <Container fluid>
           <div className="navbar-wrapper">
             <div
@@ -75,7 +73,7 @@ function AdminNavbar(props) {
                 <span className="navbar-toggler-bar bar3" />
               </NavbarToggler>
             </div>
-          
+
             <div className="nav-content-side d-none d-lg-block">
               <div>
                 <Nav className="ml-4 " navbar>
@@ -86,27 +84,36 @@ function AdminNavbar(props) {
                   </NavItem>
                 </Nav>
               </div>
-              
               <div className="nav-content">
                 <Nav className="ml-auto " navbar>
-                  <NavItem className="nav-tabs">
+                  <NavItem className="">
                     <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                       <b>Branch : Mulund West Mumbai</b>
                     </NavLink>
                   </NavItem>
-                  <NavItem  className="nav-tabs">
+                  <NavItem className="">
                     <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                       <b> Branch Code : 6711</b>
                     </NavLink>
                   </NavItem>
+                  <div>
+                    <NavItem className="">
+                      <NavLink
+                        style={{ marginLeft: "150px", fontSize: "20px" }}
+                        href="#pablo"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/admin/notifications");
+                        }}
+                      >
+                        <FaBell />
+                      </NavLink>
+                    </NavItem>
+                  </div>
                 </Nav>
               </div>
             </div>
           </div>
-          
-          {/* Add BreadCrumbs component here */}
-          {/* <BreadCrumbs endpoint={endpoint} /> */}
-
           <NavbarToggler onClick={toggleCollapse}>
             <span className="navbar-toggler-bar navbar-kebab" />
             <span className="navbar-toggler-bar navbar-kebab" />

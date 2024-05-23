@@ -317,42 +317,57 @@ function CounterFeitNoteDashBoard(props) {
       <div className="content">
         <Row>
             <Col md='12'>
-            <Card >
-            <CardHeader>
-          <h4 className="title">Select Date Range</h4>
-        </CardHeader>
-        <div className="date-range">
-          <label htmlFor="fromDate">From Date:</label>
-          <input
-            type="date"
-            id="fromDate"
-            value={fromDate}
-            onChange={handleFromDateChange}
-          />
-          <label htmlFor="toDate">To Date:</label>
-          <input
-            type="date"
-            id="toDate"
-            value={toDate}
-            onChange={handleToDateChange}
-          />
+            <div className="card">
+            <div className="card-header">
+              <h4 className="title">Select Date Range</h4>
+            </div>
+            <div className="card-body">
+              <div className="date-range">
+                <div className="form-group">
+                  <label htmlFor="fromDate">From Date:</label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="fromDate"
+                    value={fromDate}
+                    onChange={handleFromDateChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="toDate">To Date:</label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="toDate"
+                    value={toDate}
+                    onChange={handleToDateChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="status">Status:</label>
+                  <select
+                    id="status"
+                    className="form-control"
+                    value={status}
+                    onChange={handleStatusChange}
+                  >
+                    <option value="">Select Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                  </select>
+                </div>
+                <button className="btn btn-info mt-4" onClick={handleSearch}>
+                  Search
+                </button>
+                <button className="btn btn-info mt-4" onClick={handleNavigate}>
+                  Add Entry
+                </button>
+              </div>
+           
+            </div>
+          </div>
 
-          <label htmlFor="status">Status:</label>
-          <select id="status" value={status} onChange={handleStatusChange}>
-            <option value="">Select Status</option>
-            <option value="Pending">Pending</option>
-            <option value="Approved">Approved</option>
-            <option value="Rejected">Rejected</option>
-          </select>
-          <button className="search-button" onClick={handleSearch}>
-            Search
-          </button>
-          <button className="search-button" onClick={handleNavigate}>
-            Add Entry
-          </button>
-          
-        </div>
-            </Card>
             </Col>
         </Row>
         <Row>
@@ -413,29 +428,30 @@ function CounterFeitNoteDashBoard(props) {
         </div>
 
         <Pagination  className="d-flex justify-content-end mr-3">
-          {/* <div className="pagination-container">
-          <ul className="pagination"> */}
+         
 
           <PaginationItem
+          
             className={`page-item ${
               currentPage === 1 ? "disabled" : ""
             } `}
-            // style={{textColor:'red'}}
+            
           >
-            <PaginationLink onClick={handlePrevPage} className="page-link">
+            <PaginationLink onClick={handlePrevPage} className="page-link" style={{ color: 'black' }}>
               Prev
             </PaginationLink>
           </PaginationItem>
           {[...Array(totalPages).keys()].map((number) => (
             <PaginationItem
+          
               key={number + 1}
               className={`${
-                currentPage === number + 1 ? "active" : ""
+                currentPage === number + 1 ? "btn-info" : ""
               } `}
             >
               <PaginationLink
                 onClick={() => handlePageChange(number + 1)}
-                className="page-link"
+                style={{ color: 'black' }}
               >
                 {number + 1}
               </PaginationLink>
@@ -446,12 +462,11 @@ function CounterFeitNoteDashBoard(props) {
               currentPage === totalPages ? "disabled" : ""
             }`}
           >
-            <PaginationLink onClick={handleNextPage} className="page-link">
+            <PaginationLink onClick={handleNextPage} className="page-link" style={{ color: 'black' }}>
               Next
             </PaginationLink>
           </PaginationItem>
-          {/* </ul> */}
-          {/* </div> */}
+         
         </Pagination>
             </Card>
             </Col>
