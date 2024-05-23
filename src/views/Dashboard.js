@@ -5,35 +5,19 @@ import { Line, Bar } from "react-chartjs-2";
 import './makerRole.css'
 
 import {
-  Button,
-  ButtonGroup,
-  Card,
+
   CardHeader,
-  CardBody,
-  CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
+
   Table,
   Row,
   Col,
-  UncontrolledTooltip,
-  Dropdown,
-  Container,
-  Form,
+  Card,
+
+  
 } from "reactstrap";
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4,
-} from "variables/charts.js";
+
 import RegisterPage from "./ListOfNotes";
-import BreadCrumbs from "./BreadCrumbs";
+// import BreadCrumbs from "./BreadCrumbs";
 
 function Dashboard(props) {
 

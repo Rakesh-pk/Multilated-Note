@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { useNavigate ,useLocation} from "react-router-dom";
 import {
-  Button,
+  // Button,
   Card,
   CardHeader,
   CardBody,
@@ -12,7 +12,7 @@ import {
   Row,
   Col
 } from "reactstrap";
-import BreadCrumbs from "./BreadCrumbs";
+// import BreadCrumbs from "./BreadCrumbs";
 
 function NoteRegister({editOrReview}) {
 
@@ -55,9 +55,9 @@ function NoteRegister({editOrReview}) {
     navigate("/admin/Mutilated-notes");
   };
 
-  const handleBack = () => {
-    navigate(-1)
-  }
+  // const handleBack = () => {
+  //   navigate(-1)
+  // }
   return (
     <>
       <div className="content ">
@@ -69,7 +69,7 @@ function NoteRegister({editOrReview}) {
                {endpoint ==='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register </h4>):(<h4 className="title">Customer Receipt - {editOrReview}</h4>)}
               </CardHeader>)}
               <CardHeader>
-               {endpoint =='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register - Add New Entry  </h4>):(<h4 className="title">Receipt</h4>)}
+               {endpoint ==='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register - Add New Entry  </h4>):(<h4 className="title">Receipt</h4>)}
               </CardHeader>
               <CardBody className="ml-n5">
                 <div className="role-component  align-class">

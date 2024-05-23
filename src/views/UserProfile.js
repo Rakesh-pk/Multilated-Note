@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 import {
   Button,
   Card,
@@ -15,12 +15,12 @@ import {
 } from "reactstrap";
 import NoteRegister from "./NoteRegister";
 import FinalSubmit from "./FinalSubmit";
-import BreadCrumbs from "./BreadCrumbs";
+// import BreadCrumbs from "./BreadCrumbs";
 
 function UserProfile() {
   const location = useLocation();
   const endpoint = location.pathname;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [totalValue, setTotalValue] = useState(0);
   const [fullValue, setFullValue] = useState(0);
   const [fullAmount, setFullAmount] = useState({
@@ -89,12 +89,12 @@ function UserProfile() {
     setIsReadOnly(true);
     setShowComponent(true);
   };
-  let overTableHead = {
-    backgroundColor:  '#3E74F7' ,
-    // color: white,
-    // font-size: 0.9rem,
-    // font-weight: 500,
-  }
+  // let overTableHead = {
+  //   backgroundColor:  '#3E74F7' ,
+  //   // color: white,
+  //   // font-size: 0.9rem,
+  //   // font-weight: 500,
+  // }
 
   return (
     <>
