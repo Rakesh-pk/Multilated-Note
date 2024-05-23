@@ -25,6 +25,8 @@ import Typography from "views/Typography.js";
 import UserProfile from "views/UserProfile.js";
 import NoteRegister from "views/NoteRegister";
 import FinalSubmit from "views/FinalSubmit";
+import CouterFeitNoteRegister from "views/CouterFeitNoteRegister";
+import CounterFeitNoteDashBoard from "views/CounterFeitNoteDashBoard";
 
 var routes = [
   {
@@ -59,6 +61,23 @@ var routes = [
     component: <FinalSubmit/>,
     layout: "/admin",
   },
+  {
+    path: "/counter-feit-notes-dashboard",
+    name: "Counter Feit Notes",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-pin",
+    component: <CounterFeitNoteDashBoard/>,
+    layout: "/admin",
+  },
+  {
+    path: "/counter-feit-notes-register",
+    name: "Counter Feit Notes",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-pin",
+    component: <CouterFeitNoteRegister/>,
+    layout: "/admin",
+  },
+  
  
 ];
 export default routes;

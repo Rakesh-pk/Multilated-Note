@@ -12,8 +12,10 @@ import {
   Row,
   Col
 } from "reactstrap";
+import BreadCrumbs from "./BreadCrumbs";
 
-function NoteRegister() {
+function NoteRegister({editOrReview}) {
+
   const navigate = useNavigate();
   const [totalAmount, setTotalAmount] = useState(0);
   const location = useLocation();
@@ -53,14 +55,21 @@ function NoteRegister() {
     navigate("/admin/Mutilated-notes");
   };
 
+  const handleBack = () => {
+    navigate(-1)
+  }
   return (
     <>
       <div className="content ">
+   
         <Row>
           <Col md="12">
             <Card>
+              {endpoint !=='/admin/Note-register' && (<CardHeader>
+               {endpoint ==='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register </h4>):(<h4 className="title">Customer Receipt - {editOrReview}</h4>)}
+              </CardHeader>)}
               <CardHeader>
-               {endpoint=='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register</h4>):(<h4 className="title">Customer Receipt</h4>)}
+               {endpoint =='/admin/Note-register'? (<h4 className="title">Mutilated Notes Register - Add New Entry  </h4>):(<h4 className="title">Receipt</h4>)}
               </CardHeader>
               <CardBody className="ml-n5">
                 <div className="role-component  align-class">
@@ -122,37 +131,38 @@ function NoteRegister() {
                       </Row>
                     ) : customerType === "kotak" ? (
                       <Row>
-                        <Col className="pr-md-1" md="2">
-                          <FormGroup>
-                            <label>CRN</label>
-                            <Input placeholder="CRN" type="text" disabled={isReadOnly}/>
-                          </FormGroup>
-                        </Col>
-                        <Col className="pr-md-1" md="2">
-                          <FormGroup>
-                            <label>Account Number</label>
-                            <Input placeholder="Account Number" type="text" disabled={isReadOnly}/>
-                          </FormGroup>
-                        </Col>
-                        <Col className="pr-md-1" md="2">
-                          <FormGroup>
-                            <label>Customer Name</label>
-                            <Input placeholder="Customer Name" type="text" disabled={isReadOnly}/>
-                          </FormGroup>
-                        </Col>
-                        <Col className="pr-md-1" md="2">
-                          <FormGroup>
-                            <label>Contact Number</label>
-                            <Input placeholder="Contact Number" type="text" disabled={isReadOnly}/>
-                          </FormGroup>
-                        </Col>
-                        <Col className="pr-md-1" md="2">
-                          <FormGroup>
-                            <label>Customer Address</label>
-                            <Input placeholder="Customer Address" type="text" disabled={isReadOnly}/>
-                          </FormGroup>
-                        </Col>
-                      </Row>
+                      <Col className="pr-md-1" md="2">
+                        <FormGroup>
+                          <label>CRN</label>
+                          <Input placeholder="CRN" type="text"  />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pr-md-1" md="2">
+                        <FormGroup>
+                          <label>Account Number</label>
+                          <Input placeholder="Account Number" type="text" disabled style={{ backgroundColor: '#e9ecef' }} />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pr-md-1" md="2">
+                        <FormGroup>
+                          <label>Customer Name</label>
+                          <Input placeholder="Customer Name" type="text" disabled style={{ backgroundColor: '#e9ecef' }} />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pr-md-1" md="2">
+                        <FormGroup>
+                          <label>Contact Number</label>
+                          <Input placeholder="Contact Number" type="text" disabled style={{ backgroundColor: '#e9ecef' }} />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pr-md-1" md="2">
+                        <FormGroup>
+                          <label>Customer Address</label>
+                          <Input placeholder="Customer Address" type="text" disabled style={{ backgroundColor: '#e9ecef' }} />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    
                     ) : null}
 
                     <div className="amount-receipt-table">
@@ -281,6 +291,9 @@ function NoteRegister() {
                      {endpoint==='/admin/Note-register'&&<button className="save-tally ml-5 mt-4" onClick={handleSaveTally}>
                         Save for final tally
                       </button>}
+                     {/* {endpoint==='/admin/Note-register'&&<button className="save-tally ml-5 mt-4" onClick={handleBack}>
+                       Go Back
+                      </button>} */}
                     </div>
                   </Form>
                 </div>

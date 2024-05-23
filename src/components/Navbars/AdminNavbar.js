@@ -1,7 +1,7 @@
 // Import statements for the new components
 import React from "react";
 import classNames from "classnames";
-import '../../assets/css/adminNavBar.css'
+import '../../assets/css/adminNavBar.css';
 import { useLocation } from "react-router-dom";
 import {
   Button,
@@ -22,6 +22,7 @@ import {
   ModalHeader,
   NavItem
 } from "reactstrap";
+import BreadCrumbs from "views/BreadCrumbs";  // Ensure this line is here
 
 function AdminNavbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
@@ -29,6 +30,7 @@ function AdminNavbar(props) {
   const [color, setcolor] = React.useState("navbar-transparent");
   const location = useLocation();
   const endpoint = location.pathname;
+
   React.useEffect(() => {
     window.addEventListener("resize", updateColor);
     return function cleanup() {
@@ -71,42 +73,40 @@ function AdminNavbar(props) {
                 <span className="navbar-toggler-bar bar1" />
                 <span className="navbar-toggler-bar bar2" />
                 <span className="navbar-toggler-bar bar3" />
-                
               </NavbarToggler>
             </div>
           
-          
             <div className="nav-content-side d-none d-lg-block">
-               <div>
-               <Nav className="ml-4 " navbar>
-               <NavItem >
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <b>{props.brandText}</b>
-                </NavLink>
-              </NavItem>
-              </Nav>
-               </div>
-               <div className="nav-content">
-               <Nav className="ml-auto " navbar>
-              <NavItem className="nav-tabs">
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <b>Branch : Mulund West Mumbai</b>
-                </NavLink>
-              </NavItem>
-              <NavItem  className="nav-tabs">
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                 <b> Branch Code : 6711</b>
-                </NavLink>
-              </NavItem>
+              <div>
+                <Nav className="ml-4 " navbar>
+                  <NavItem>
+                    <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <b>{props.brandText}</b>
+                    </NavLink>
+                  </NavItem>
+                </Nav>
+              </div>
               
-            </Nav>
-               </div>
-            
+              <div className="nav-content">
+                <Nav className="ml-auto " navbar>
+                  <NavItem className="nav-tabs">
+                    <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <b>Branch : Mulund West Mumbai</b>
+                    </NavLink>
+                  </NavItem>
+                  <NavItem  className="nav-tabs">
+                    <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <b> Branch Code : 6711</b>
+                    </NavLink>
+                  </NavItem>
+                </Nav>
+              </div>
             </div>
-             
-           
-            
           </div>
+          
+          {/* Add BreadCrumbs component here */}
+          {/* <BreadCrumbs endpoint={endpoint} /> */}
+
           <NavbarToggler onClick={toggleCollapse}>
             <span className="navbar-toggler-bar navbar-kebab" />
             <span className="navbar-toggler-bar navbar-kebab" />

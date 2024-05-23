@@ -102,25 +102,30 @@ function Sidebar(props) {
               </div>
             ) : null}
             <Nav>
-                {/* {routes.map((prop, key) => { */}
-                {/* if (prop.redirect) return null; */}
-                {/* return ( */}
-                <li
-                    className={
-                      activeRoute(routes[0].path) + (routes[0].pro ? " active-pro" : "")
-                    }
-                    
-                  >
-                    <NavLink
-                      to={routes[0].layout + routes[0].path}
-                      className="nav-link"
-                      onClick={props.toggleSidebar}
-                    >
-                      <i className={routes[0].icon} />
-                      <p>{rtlActive ? routes[0].rtlName : routes[0].name}</p>
-                    </NavLink>
-                  </li>
-                {/* ); */}
+              {/* {routes.map((prop, key) => { */}
+              {/* if (prop.redirect) return null; */}
+              {/* return ( */}
+              <li className={ activeRoute(routes[0].path) +(routes[0].pro ? " active-pro" : "") } >
+                <NavLink
+                  to={routes[0].layout + routes[0].path}
+                  className="nav-link"
+                  onClick={props.toggleSidebar}
+                >
+                  <i className={routes[0].icon} />
+                  <p>{rtlActive ? routes[0].rtlName : routes[0].name}</p>
+                </NavLink>
+              </li>
+              <li className={ activeRoute(routes[4].path) +(routes[4].pro ? " active-pro" : "") } >
+                <NavLink
+                  to={routes[4].layout + routes[4].path}
+                  className="nav-link"
+                  onClick={props.toggleSidebar}
+                >
+                  <i className={routes[4].icon} />
+                  <p>{rtlActive ? routes[4].rtlName : routes[4].name}</p>
+                </NavLink>
+              </li>
+              {/* ); */}
               {/* // })} */}
             </Nav>
           </div>

@@ -38,6 +38,11 @@ const RegisterPage = () => {
   const handleRowClick = () =>{
     navigate('/admin/Evaluation')
   }
+  const handleNavigate =()=>{
+   
+    navigate('/admin/Note-register')
+  
+  }
   return (
     <div className="content">
       
@@ -71,6 +76,9 @@ const RegisterPage = () => {
           </select>
         <button className="search-button" onClick={handleSearch}>
           Search
+        </button>
+        <button className="search-button" onClick={handleNavigate}>
+          Add Entry
         </button>
         </div>
         <hr />

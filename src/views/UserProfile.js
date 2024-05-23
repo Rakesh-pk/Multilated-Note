@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import NoteRegister from "./NoteRegister";
 import FinalSubmit from "./FinalSubmit";
+import BreadCrumbs from "./BreadCrumbs";
 
 function UserProfile() {
   const location = useLocation();
@@ -49,7 +50,14 @@ function UserProfile() {
   const [paymentMethod, setPaymentMethod] = useState("cash");
   const [isReadOnly, setIsReadOnly] = useState(false);
   const [showComponent, setShowComponent] = useState(false);
-
+ 
+  let editOrReview;
+  if(showComponent){
+    editOrReview = 'Review'
+  }
+  else{
+    editOrReview = 'Edit'
+  }
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
   };
@@ -81,11 +89,17 @@ function UserProfile() {
     setIsReadOnly(true);
     setShowComponent(true);
   };
+  let overTableHead = {
+    backgroundColor:  '#3E74F7' ,
+    // color: white,
+    // font-size: 0.9rem,
+    // font-weight: 500,
+  }
 
   return (
     <>
       <div className="content">
-        <NoteRegister />
+        <NoteRegister editOrReview = {editOrReview} />
         {/* 2nd */}
         <Row>
           <Col md="12">
@@ -109,7 +123,7 @@ function UserProfile() {
                               Total Value
                             </th>
                           </tr>
-                          <tr className="overTableHead">
+                          <tr className="overTableHead" style={{backgroundColor:  '#3E74F7'}}>
                             <th></th>
                             <th className="text-center">500</th>
                             <th className="text-center">200</th>
@@ -466,7 +480,7 @@ function UserProfile() {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <h4 className="title">Review Component</h4>
+                  <h4 className="title">Review</h4>
                 </CardHeader>
                 <CardBody>
                  

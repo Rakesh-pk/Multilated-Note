@@ -5195,7 +5195,7 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #ffffff;
-  background-color: #e14eca;
+  background-color: red;
   border-color: #e14eca;
 }
 
