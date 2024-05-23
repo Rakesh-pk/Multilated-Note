@@ -15,7 +15,7 @@ function FirReportingRegister() {
               <Table bordered>
                
                   <tr>
-                    <th className='text-white bg-info'>#</th>
+                    <th className='text-white bg-info'>SR</th>
                     <th className='text-white bg-info'>Pending with Police at the beginning of the month (Cumulative Total) (A)</th>
                     <th className='text-white bg-info'>Sent to Police during the month (B)</th>
                     <th className='text-white bg-info'>Returned by the Police during the month (C)</th>
